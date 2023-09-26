@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Ifeanyi Aladi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            softBlue: 'hsl(215, 51%, 70%)',
+            cyan: 'hsl(178, 100%, 50%)',
+            cyanBg: 'hsla(178, 100%, 50%,70%)',
+            veryDarkBlue: 'hsl(217, 54%, 11%)', //(main BG)
+            darkBlue : 'hsl(216, 50%, 16%)', //(card BG)
+            blueSec: 'hsl(215, 32%, 27%)', //line
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: Outfit;
+    }
+
+    #overlay {
+      display: none ;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-center bg-veryDarkBlue h-[100vh]">
+  <main class="bg-darkBlue relative flex flex-col justify-center items-start py-5 pl-5 pr-0 rounded-2xl">
+    <div class="relative z-1 w-[240px] cursor-pointer " id="image">
+      <img src="images/image-equilibrium.jpg" class="cover rounded-lg" />
+    </div>
+    <div class="absolute bg-cyanBg w-[240px] h-[240px] top-[20px] left-[20px] rounded-lg cursor-pointer" id="overlay">
+      <div class="flex w-[240px] h-[240px] items-center justify-center">
+        <img src="images/icon-view.svg" class="w-[50px] opacity-[100%]"/>
+      </div>
+    </div>
+    <h3 class="text-[20px] font-[600] text-white hover:text-cyan cursor-pointer mt-4">Equilibrium #3429</h3>
+    <p class="text-[14px] font-[300] text-softBlue mt-4 w-[220px]">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="flex justify-between items-center w-[240px] mt-4">
+      <div class="flex items-center justify-between w-[85px]">
+        <img src="images/icon-ethereum.svg" class="w-[10px]">
+        <p class="text-[14px] font-[400] text-cyan">0.041 ETH</p>
+      </div>
+      <div class="flex items-center justify-between w-[85px]">
+        <img src="images/icon-clock.svg" class="w-[15px]">
+        <p class="text-[14px] font-[400] text-softBlue">3 days left</p>
+      </div>
+    </div>
+    <div class="bg-blueSec h-[0.5px] w-[240px] mt-4"></div>
+    <div class="flex justify-between items-center w-[262px] mt-2 mb-2">
+      <img src="images/image-avatar.png" class="w-[30px] cover border-[1px] border-solid border-white rounded-full"/>
+      <p class="text-softBlue text-[14px] font-[300] w-[220px]">Creation of <span class="hover:text-cyan text-white font-[400] cursor-pointer">Jules Wyvern</span></p>
+    </div>
+  </main>
+
+  <script>
+    const element = document.getElementById("image");
+    const overlay = document.getElementById("overlay")
+
+      element.addEventListener("mouseenter", () => overlay.style.display = 'flex');
+      element.addEventListener("mouseleave",() => overlay.style.display = 'none')
+  </script>
+
+
+</body>
+</html>
